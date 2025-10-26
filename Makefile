@@ -1,5 +1,5 @@
 PRODUCT = hello
-PLATFORMS = coco apple2 atari c64 adam msdos msxrom
+PLATFORMS = apple2 atari
 
 # You can run 'make <platform>' to build for a specific platform,
 # or 'make <platform>/<target>' for a platform-specific target.
@@ -9,7 +9,15 @@ PLATFORMS = coco apple2 atari c64 adam msdos msxrom
 
 # SRC_DIRS may use the literal %PLATFORM% token.
 # It expands to the chosen PLATFORM plus any of its combos.
-SRC_DIRS = src src/%PLATFORM%
+SRC_DIRS = src src/common src/%PLATFORM%
+
+# Include directories for all platforms
+EXTRA_INCLUDE = src/include src/common
+
+# Platform-specific include directories
+EXTRA_INCLUDE_COCO = src/coco
+EXTRA_INCLUDE_APPLE2 = src/apple2
+EXTRA_INCLUDE_ATARI = src/atari
 
 # FUJINET_LIB can be
 # - a version number such as 4.7.6
@@ -18,7 +26,7 @@ SRC_DIRS = src src/%PLATFORM%
 # - a URL to a git repo
 # - empty which will use whatever is the latest
 # - undefined, no fujinet-lib will be used
-FUJINET_LIB = 
+FUJINET_LIB = 4.7.9
 
 # Define extra dirs ("combos") that expand with a platform.
 # Format: platform+=combo1,combo2

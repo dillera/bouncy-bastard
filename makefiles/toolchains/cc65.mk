@@ -32,7 +32,7 @@ define link-lib
 endef
 
 define link-bin
-  $(LD) -vm -t $(PLATFORM) $(LDFLAGS) $2 $(LIBS) -o $1
+  $(LD) -t $(PLATFORM) $(LDFLAGS) $2 $(LIBS) -o $1
 endef
 
 define compile
