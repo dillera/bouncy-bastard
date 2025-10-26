@@ -52,6 +52,4 @@ over:
 _dlist_scr_ptr:         .res 2
 _screen_mem_orig:       .res 2
 _is_alt_screen:         .res 1
-
-.segment "BUFFER"
 _display_buffer:        .res 960      ; full 40x24 for screen data

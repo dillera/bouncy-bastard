@@ -10,9 +10,7 @@ ASFLAGS += --cpu 6502
 LDFLAGS +=
 
 # Platform-specific linker configurations
-ifeq ($(PLATFORM),atari)
-  LDFLAGS += -C $(MWD)/atari.cfg
-endif
+# (Use default cc65 configs unless overridden)
 
 CFLAGS += -DGIT_VERSION='"$(GIT_VERSION)"'
 

@@ -1,5 +1,5 @@
 PRODUCT = bouncyClient
-PLATFORMS = apple2 atari
+PLATFORMS = apple2 atari coco
 
 # You can run 'make <platform>' to build for a specific platform,
 # or 'make <platform>/<target>' for a platform-specific target.

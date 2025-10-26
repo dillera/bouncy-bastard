@@ -115,7 +115,7 @@ class LibLocator:
       self.getDirectory()
 
     # Try to find library file in directory if not already found
-    if not self.MV.FUJINET_LIB_FILE and self.MV.FUJINET_LIB_DIR:
+    if not self.MV.FUJINET_LIB_FILE and self.MV.FUJINET_LIB_DIR and os.path.isdir(self.MV.FUJINET_LIB_DIR):
       rxm = self.findLibrary(os.listdir(self.MV.FUJINET_LIB_DIR))
       if rxm:
         self.MV.FUJINET_LIB_FILE = rxm.group(0)
