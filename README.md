@@ -1,23 +1,8 @@
-# MekkoGX
+# Bouncy Client
 
-[MekkoGX](https://github.com/fozzTexx/MekkoGX) is a cross-platform
-build template for retro and classic computers. It provides a
-collection of modular Makefiles and a top-level template project to
-simplify compiling, linking, and building disk images across multiple
-platforms.
+Makes clients for bouncy world
 
-A major feature is **FujiNet-lib integration**. You can point
-`FUJINET_LIB` to a version, a directory, a zip archive, or a git
-repository, and it will be fetched if needed. Include paths and
-libraries are passed to your compiler and linker seamlessly.
 
-Another feature is **GitHub CI builds**. Push your project to GitHub
-and the CI will automatically compile for all configured
-platforms. This is particularly valuable because retro projects often
-require **many different toolchains**. Even though
-[defoogi](https://github.com/FozzTexx/defoogi) avoids the headache of
-setting up the needed toolchains, it relies on Docker — which many
-developers don’t have installed or don’t want to use.
 
 ## Features
 
