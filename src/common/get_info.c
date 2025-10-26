@@ -28,7 +28,7 @@
 char endpoint_input[61];
 char *protocol = "n1:";
 
-char *version = "2.0.0";
+char *version = "Diller-2.0.1";
 
 void get_info() {
   

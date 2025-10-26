@@ -124,6 +124,10 @@ _cache/
   4.7.9-apple2/
   4.7.9-atari/
   4.7.9-coco/
+  hirestxt-lib/     # Downloaded HiResTxt library (CoCo only)
+  0.5.0/
+    hirestxt.h      # Header file
+    libhirestxt.a   # Static library
 ```
 
 ## Fixes Applied
@@ -147,10 +151,13 @@ _cache/
 
 ### CoCo Support
 
-1. **Stub Header for hirestxt Library**
-   - Created `src/coco/hirestxt.h` as a placeholder
-   - Reason: CMOC's hirestxt library not available in standard installation
-   - Note: Full CoCo support requires additional CMOC library setup
+1. **HiResTxt Library Integration**
+   - The CoCo build automatically downloads and integrates the hirestxt-mod library (v0.5.0)
+   - Managed by `makefiles/hirestxt-lib.mk`
+   - Downloads from: https://github.com/RichStephens/hirestxt-mod/releases
+   - Library is cached in `_cache/hirestxt-lib/0.5.0/`
+   - Provides high-resolution text display support for CoCo graphics mode
+   - Automatically linked with CMOC compiler via `-lhirestxt` flag
 
 ### Build System Adjustments
 
