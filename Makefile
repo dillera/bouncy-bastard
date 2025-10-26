@@ -1,4 +1,4 @@
-PRODUCT = hello
+PRODUCT = bouncyClient
 PLATFORMS = apple2 atari
 
 # You can run 'make <platform>' to build for a specific platform,

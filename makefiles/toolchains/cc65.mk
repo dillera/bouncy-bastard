@@ -9,6 +9,11 @@ CFLAGS += -O --cpu 6502
 ASFLAGS += --cpu 6502
 LDFLAGS +=
 
+# Platform-specific linker configurations
+ifeq ($(PLATFORM),atari)
+  LDFLAGS += -C $(MWD)/atari.cfg
+endif
+
 CFLAGS += -DGIT_VERSION='"$(GIT_VERSION)"'
 
 define include-dir-flag

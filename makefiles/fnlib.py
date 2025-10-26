@@ -114,6 +114,12 @@ class LibLocator:
     if not self.MV.FUJINET_LIB_DIR:
       self.getDirectory()
 
+    # Try to find library file in directory if not already found
+    if not self.MV.FUJINET_LIB_FILE and self.MV.FUJINET_LIB_DIR:
+      rxm = self.findLibrary(os.listdir(self.MV.FUJINET_LIB_DIR))
+      if rxm:
+        self.MV.FUJINET_LIB_FILE = rxm.group(0)
+
     if not self.MV.FUJINET_LIB_FILE \
        and (not self.MV.FUJINET_LIB_ZIP or not os.path.exists(self.MV.FUJINET_LIB_ZIP)):
       self.downloadZip()
@@ -260,13 +266,12 @@ class LibLocator:
           except:
             continue
 
-        with zipfile.ZipFile(self.MV.FUJINET_LIB_ZIP, "r") as zf:
-          zf.extractall(self.MV.FUJINET_LIB_DIR)
+        if os.path.exists(self.MV.FUJINET_LIB_ZIP):
+          with zipfile.ZipFile(self.MV.FUJINET_LIB_ZIP, "r") as zf:
+            zf.extractall(self.MV.FUJINET_LIB_DIR)
+          return
 
-        return
-
-      error_exit("Unable to download FujiNet library from", release_url)
-      return
+    error_exit("Unable to download FujiNet library")
 
   def gitClone(self, url):
     global FUJINET_CACHE_DIR
